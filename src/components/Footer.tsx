@@ -7,13 +7,13 @@ import React from "react";
 const Footer: React.FC = () => {
   const pathname = usePathname();
   return (
-    <nav className="fixed bottom-0 w-full flex justify-around bg-[#FFFFFF] text-[#5D5D5D] py-2">
+    <nav className="fixed z-20 bottom-0 w-full flex justify-around bg-[#FFFFFF] text-[#5D5D5D] py-1">
       <Link href={"/"} className="cursor-pointer">
         <div className="flex justify-center items-center text-xs flex-col">
           <div
             className={
               pathname === "/"
-                ? "flex justify-center items-center bg-[#DFEFFF] text-[#52B9FF] p-2 rounded-md"
+                ? "flex justify-center items-center bg-[#DFEFFF] text-[#52B9FF] p-2 rounded-lg"
                 : "flex justify-center items-center p-2"
             }
           >
