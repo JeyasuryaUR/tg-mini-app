@@ -16,7 +16,6 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -290,11 +289,11 @@ export default function Home() {
               </p>
               <div className="text-[#484848] flex p-2 items-center gap-2 py-1 border-b-2 border-[#EDEDED]">
                 <ShoppingBag className="bg-[#52B9FF] text-[#FFFFFF] p-1 rounded-sm" />
-                <p>I'm the buyer</p>
+                <p>{"I'm the buyer"}</p>
               </div>
               <div className="text-[#484848] flex p-2 items-center gap-2 py-1">
                 <Handshake className="bg-[#52B9FF] text-[#FFFFFF] p-1 rounded-sm" />
-                <p>I'm the seller</p>
+                <p>{"I'm the seller"}</p>
               </div>
             </div>
           )}
