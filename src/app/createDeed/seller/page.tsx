@@ -10,14 +10,13 @@ import {
   ChevronDown,
   Copy,
   Info,
-  Plus,
   PlusIcon,
   Send,
   XIcon,
 } from "lucide-react";
 import { useState } from "react";
 
-function createDeedSeller() {
+function CreateDeedSeller() {
   const [deed, setDeed] = useState("");
   const [isOneTime, setIsOneTime] = useState(true);
   const [modeOfPayment, setModeOfPayment] = useState<string | null>("");
@@ -350,4 +349,4 @@ function createDeedSeller() {
   );
 }
 
-export default createDeedSeller;
+export default CreateDeedSeller;

@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Copy, Info, Send } from "lucide-react";
+import { Info } from "lucide-react";
 
 function Contract() {
   return (

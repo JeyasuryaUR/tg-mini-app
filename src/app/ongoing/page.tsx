@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Copy, HandCoins, Info, Send } from "lucide-react";
+import { HandCoins, Info } from "lucide-react";
 import report from "@/app/report-icon.png";
 import Image from "next/image";
 
