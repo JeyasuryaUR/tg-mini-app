@@ -270,7 +270,9 @@ export default function Home() {
               <p className="text-[#C4C4C4] text-sm">
                 Last update: A few minutes ago
               </p>
-              <Button className="bg-[#52B9FF]">Details</Button>
+              <Link href="/contract/buyer">
+                <Button className="bg-[#52B9FF]">Details</Button>
+              </Link>
             </div>
           </div>
         </div>

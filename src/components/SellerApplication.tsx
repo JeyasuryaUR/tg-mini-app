@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 
-function Milestones(props: { milestone: string; amount: string }) {
+function SellerApplication(props: { seller: string; time: string }) {
   const radioRef = useRef<HTMLInputElement>(null);
   return (
     <div className="w-full flex flex-col gap-y-2">
@@ -23,13 +23,13 @@ function Milestones(props: { milestone: string; amount: string }) {
             className="border-[#52B9FF] border-2 outline-none bg-[#52B9FF]"
             ref={radioRef}
           />
-          <label>{props?.milestone}</label>
+          <label>{props?.seller}</label>
         </div>
-        <p className="text-[#52B9FF]">${props?.amount}</p>
+        <p className="text-[#52B9FF]">${props?.time}</p>
       </div>
       <div className="p-[0.5px] bg-[#EDEDED]"></div>
     </div>
   );
 }
 
-export default Milestones;
+export default SellerApplication;
