@@ -83,12 +83,14 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center justify-center gap-4 w-full">
-          <div className="bg-white border-[2px] w-1/2 border-[#EDEDED] rounded-lg py-3 px-4 sm:px-2 flex items-center justify-start sm:justify-center gap-4">
+          <div className="bg-white border-[2px] w-1/2 border-[#EDEDED] rounded-lg py-3 px-2 flex items-center justify-center gap-4">
             <div className="w-8 h-8 rounded-lg flex justify-center items-center bg-[#52B9FF]">
               <BriefcaseBusiness className="text-[#FFFFFF]" />
             </div>
             <div>
-              <p className="text-sm text-[#5D5D5D]">Total</p>
+              <p className="text-sm text-[#5D5D5D]">
+                Total <span className="p-5"></span>
+              </p>
               <p className="text-lg text-black">6</p>
             </div>
           </div>
