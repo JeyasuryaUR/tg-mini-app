@@ -301,7 +301,7 @@ function CreateDeedSeller() {
                         });
                       }}
                     >
-                      1 week
+                      1week
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={(e) => {
@@ -313,7 +313,7 @@ function CreateDeedSeller() {
                         });
                       }}
                     >
-                      2 weeks
+                      2weeks
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={(e) => {
@@ -325,7 +325,7 @@ function CreateDeedSeller() {
                         });
                       }}
                     >
-                      3 weeks
+                      3weeks
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={(e) => {
@@ -337,7 +337,7 @@ function CreateDeedSeller() {
                         });
                       }}
                     >
-                      4 weeks
+                      4weeks
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -448,18 +448,22 @@ function CreateDeedSeller() {
             <h1 className="text-[#484848] font-bold">Milestones</h1>
           </div>
           <div className="w-full flex flex-col gap-y-2">
-            <div className="w-full flex justify-between text-[#5D5D5D]">
+            <div className="w-full flex flex-col justify-between text-[#5D5D5D] gap-y-2">
               {mileStones.map((val) => {
                 return (
                   <>
-                    <p>{val.milestone}</p>
-                    <p className="text-[#52B9FF]">{val.amount}(1week)</p>
+                    <div className="w-full flex justify-between text-[#5D5D5D]">
+                      <p>{val.milestone}</p>
+                      <p className="text-[#52B9FF]">
+                        {val.amount} {val.expectedTime}
+                      </p>
+                    </div>
+                    <div className="p-[0.5px] bg-[#EDEDED]"></div>
                   </>
                 );
               })}
             </div>
           </div>
-          <div className="p-[0.5px] bg-[#EDEDED]"></div>
 
           {/* <div className="w-full flex flex-col gap-y-2">
             <div className="w-full flex justify-between text-[#5D5D5D]">
@@ -475,7 +479,6 @@ function CreateDeedSeller() {
               <p className="text-[#52B9FF]">$300(1week)</p>
             </div>
           </div> */}
-          <div className="p-[0.5px] bg-[#EDEDED]"></div>
         </div>
       )}
       <div className="w-full flex gap-2 min-h-[120px]">

@@ -246,7 +246,7 @@ export default function Home() {
             </DropdownMenu>
           </div>
         </div>
-        <div className="w-full mx-6 border-2 border-gray-200 bg-white rounded-lg min-h-[120px] px-4 py-2">
+        <div className="w-full mx-6 border-2 border-gray-200 bg-white rounded-lg min-h-[120px] px-4 py-4">
           <div className="flex flex-col">
             {/* Details */}
             <p className="text-[#5D5D5D] text-xs">ID: 3kh4kh21</p>
