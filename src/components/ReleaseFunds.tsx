@@ -1,6 +1,33 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import React, { useEffect, useRef, useState } from "react";
+import Milestones from "./Milestones";
 
 function ReleaseFunds() {
+  const [mileStonesObj, setMileStonesObj] = useState([
+    {
+      id: 0,
+      milestone: "Userflow & designing",
+      amount: "1200",
+      expectedTime: "",
+    },
+    {
+      id: 1,
+      milestone: "Frontend Development",
+      amount: "1200",
+      expectedTime: "",
+    },
+    {
+      id: 2,
+      milestone: "Backend development & smart contract",
+      amount: "1200",
+      expectedTime: "",
+    },
+  ]);
+  const mileStones = true;
+  const radioRef = useRef<HTMLInputElement>(null);
+
   return (
     <div className="h-screen w-screen flex flex-col items-start justify-start bg-[#F8F8F8] p-4 overflow-x-hidden gap-y-8">
       <div className="flex flex-col justify-center gap-y-2">
@@ -13,19 +40,40 @@ function ReleaseFunds() {
         <div>
           <h1 className="text-[#484848] font-bold">Release Funds for</h1>
         </div>
-        <div className="w-full flex flex-col gap-y-2">
-          <div className="w-full flex justify-between text-[#5D5D5D]">
-            <div className="flex gap-1 items-center justify-center">
-              <input
-                type="radio"
-                className=" border-[#52B9FF] border-2 outline-none bg-[#52B9FF]"
-              />
-              <label>Complete Project</label>
+        {!mileStones && (
+          <div className="w-full flex flex-col gap-y-2">
+            <div
+              className="w-full flex justify-between text-[#5D5D5D]"
+              onClick={() => {
+                if (radioRef?.current) {
+                  if (radioRef?.current?.checked) {
+                    radioRef.current.checked = false;
+                  } else {
+                    radioRef.current.checked = true;
+                  }
+                }
+              }}
+            >
+              <div className="flex gap-1 items-center justify-center">
+                <input
+                  type="radio"
+                  className="border-[#52B9FF] border-2 outline-none bg-[#52B9FF]"
+                  ref={radioRef}
+                />
+                <label>Complete Project</label>
+              </div>
+              <p className="text-[#52B9FF]">$1200</p>
             </div>
-            <p className="text-[#52B9FF]">$1200</p>
           </div>
-        </div>
-        <div className="p-[0.5px] bg-[#EDEDED]"></div>
+        )}
+        {mileStones &&
+          mileStonesObj.map((val) => {
+            return (
+              <>
+                <Milestones milestone={val?.milestone} amount={val?.amount} />
+              </>
+            );
+          })}
       </div>
       <div className="flex flex-col gap-y-3 w-full">
         {/* Deed Details */}
@@ -64,7 +112,7 @@ function ReleaseFunds() {
         </div>
         <div className="p-[0.5px] bg-[#EDEDED]"></div>
       </div>
-      <div className="w-full flex gap-2">
+      <div className="w-full flex gap-2 min-h-[120px]">
         {/* Share */}
         <div className="w-full">
           <Button className="w-full bg-[#52B9FF] flex justify-center items-center gap-2">
