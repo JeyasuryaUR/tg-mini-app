@@ -280,9 +280,9 @@ export default function Home() {
             }}
           >
             {isDeedPopupOpen ? (
-              <X className="text-[#FFFFFF] rotate-90" />
+              <X className="text-[#FFFFFF] rotate-90 hover:cursor-pointer" />
             ) : (
-              <Plus className="text-[#FFFFFF]" />
+              <Plus className="text-[#FFFFFF] hover:cursor-pointer" />
             )}
           </div>
           {isDeedPopupOpen && (

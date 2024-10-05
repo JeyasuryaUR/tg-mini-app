@@ -145,7 +145,7 @@ function CreateDeedSeller() {
           </div>
           {!isOneTime &&
             mileStones.map((val) => (
-              <div className="flex flex-col gap-y-2 w-full">
+              <div className="flex flex-col gap-y-2 w-full" key={val?.id}>
                 <div className="flex p-2 w-full items-center bg-[#FFFFFF] border-[#C4C4C4] border-2 rounded-md">
                   <input
                     type="text"
