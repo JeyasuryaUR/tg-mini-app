@@ -49,12 +49,14 @@ export default function Home() {
             <p className="text-lg text-black">Martha Johnson</p>
           </div>
         </div>
-        <div className="bg-[#FFFFFF] w-14 h-14 p-2 rounded-full flex flex-col justify-center items-center cursor-pointer">
-          <div className="w-full flex justify-end">
-            <div className="w-2 h-2 bg-[#52B9FF] items-start rounded-full"></div>
+        <Link href="/notifications">
+          <div className="bg-[#FFFFFF] w-14 h-14 p-2 rounded-full flex flex-col justify-center items-center cursor-pointer">
+            <div className="w-full flex justify-end">
+              <div className="w-2 h-2 bg-[#52B9FF] items-start rounded-full"></div>
+            </div>
+            <Bell className="w-full h-full" />
           </div>
-          <Bell className="w-full h-full" />
-        </div>
+        </Link>
       </div>
       <p className="my-6 text-[#484848] font-semibold text-xl text-left w-full">
         Your Activity
@@ -81,7 +83,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center justify-center gap-4 w-full">
-          <div className="bg-white border-[2px] w-1/2 border-[#EDEDED] rounded-lg py-3 px-2 flex items-center justify-center gap-4">
+          <div className="bg-white border-[2px] w-1/2 border-[#EDEDED] rounded-lg py-3 px-4 sm:px-2 flex items-center justify-start sm:justify-center gap-4">
             <div className="w-8 h-8 rounded-lg flex justify-center items-center bg-[#52B9FF]">
               <BriefcaseBusiness className="text-[#FFFFFF]" />
             </div>
@@ -106,7 +108,7 @@ export default function Home() {
           Your Deeds
         </p>
         <div className="flex items-center justify-center my-4 w-full text-black gap-2">
-          <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-base px-1">
+          <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-xs px-1">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex justify-center items-center">
@@ -153,12 +155,12 @@ export default function Home() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-base px-1">
+          <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-xs px-1">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex justify-center items-center">
                   <p className="text-[#5D5D5D]">{status ? status : "Status"}</p>
-                  <ChevronDown />
+                  <ChevronDown className="text-xs" />
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="">
@@ -183,7 +185,7 @@ export default function Home() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-base px-1">
+          <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-xs px-1">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex justify-center items-center">
@@ -213,12 +215,12 @@ export default function Home() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-base px-1">
+          <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-xs px-1">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex justify-center items-center">
                   <p className="text-[#5D5D5D]">{date ? date : "Date"}</p>
-                  <ChevronDown />
+                  <ChevronDown className="text-xs" />
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="">
@@ -289,17 +291,18 @@ export default function Home() {
                 New Deed
               </p>
 
-              <Link href="/createDeed/seller">
+              <Link href="/createDeed/buyer">
                 <div className="text-[#484848] flex p-2 items-center gap-2 border-b-2 border-[#EDEDED]">
                   <ShoppingBag className="bg-[#52B9FF] text-[#FFFFFF] p-1 rounded-sm" />
                   <p>{"I'm the buyer"}</p>
                 </div>
               </Link>
-              <div className="text-[#484848] flex p-2 items-center gap-2">
-
-                <Handshake className="bg-[#52B9FF] text-[#FFFFFF] p-1 rounded-sm" />
-                <p>{"I'm the seller"}</p>
-              </div>
+              <Link href="/createDeed/seller">
+                <div className="text-[#484848] flex p-2 items-center gap-2">
+                  <Handshake className="bg-[#52B9FF] text-[#FFFFFF] p-1 rounded-sm" />
+                  <p>{"I'm the seller"}</p>
+                </div>
+              </Link>
             </div>
           )}
         </div>

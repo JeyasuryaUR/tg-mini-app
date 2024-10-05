@@ -9,7 +9,7 @@ import {
 import { ChevronDown, Copy, Info, PlusIcon, Send, XIcon } from "lucide-react";
 import { useState } from "react";
 
-function CreateDeedSeller() {
+function CreateFee() {
   const [deed, setDeed] = useState("");
   const [isOneTime, setIsOneTime] = useState(true);
   const [modeOfPayment, setModeOfPayment] = useState<string | null>("");
@@ -497,4 +497,4 @@ function CreateDeedSeller() {
   );
 }
 
-export default CreateDeedSeller;
+export default CreateFee;

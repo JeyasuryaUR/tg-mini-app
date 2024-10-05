@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { HandCoins, Info } from "lucide-react";
+import { Check, HandCoins, Info } from "lucide-react";
 import report from "@/app/report-icon.png";
 import Image from "next/image";
 
 function Ongoing() {
+  const mileStones = true;
+  const completed = true;
   return (
     <div className="h-screen w-screen flex flex-col items-start justify-start bg-[#F8F8F8] p-4 overflow-x-hidden gap-y-5">
       <div className="flex flex-col justify-center gap-y-2">
@@ -28,7 +30,7 @@ function Ongoing() {
           <p className="text-[#5D5D5D] font-bold">Project Status</p>
         </div>
         <div className="text-xs text-[#5D5D5D]">
-          <p>Seller Allocation Pending</p>
+          <p>{completed ? "Completed" : "Ongoing"}</p>
         </div>
       </div>
       <div className="flex flex-col gap-y-3 w-full">
@@ -75,21 +77,61 @@ function Ongoing() {
           </div>
         </div>
         <div className="p-[0.5px] bg-[#EDEDED]"></div>
+        {mileStones && (
+          <div className="flex flex-col gap-y-3 py-2 w-full">
+            {/* Deed Details */}
+            <div>
+              <h1 className="text-[#484848] font-bold">Milestones</h1>
+            </div>
+            <div className="w-full flex flex-col gap-y-2">
+              <div className="w-full flex justify-between text-[#5D5D5D]">
+                <div className="flex justify-center items-center gap-2">
+                  <p>Userflow & designing</p>
+                  {completed && (
+                    <Check className="rounded-full bg-[#52B9FF] text-[#FFFFFF] w-3 h-3" />
+                  )}
+                </div>
+                <p className="text-[#52B9FF]">$300(1week)</p>
+              </div>
+            </div>
+            <div className="p-[0.5px] bg-[#EDEDED]"></div>
+
+            <div className="w-full flex flex-col gap-y-2">
+              <div className="w-full flex justify-between text-[#5D5D5D]">
+                <p>Frontend Development</p>
+                <p className="text-[#52B9FF]">$300(1week)</p>
+              </div>
+            </div>
+            <div className="p-[0.5px] bg-[#EDEDED]"></div>
+
+            <div className="w-full flex flex-col gap-y-2">
+              <div className="w-full flex justify-between text-[#5D5D5D]">
+                <p>Backend development & smart contract</p>
+                <p className="text-[#52B9FF]">$300(1week)</p>
+              </div>
+            </div>
+            <div className="p-[0.5px] bg-[#EDEDED]"></div>
+          </div>
+        )}
       </div>
-      <div className="w-full flex gap-2">
+      <div className="w-full flex gap-2 min-h-[120px]">
         {/* Share */}
-        <div className="w-1/2">
-          <Button className="w-full bg-[#52B9FF] flex justify-center items-center gap-2">
-            <HandCoins className="text-[#FFFFFF] text-sm" />
-            Release Funds
-          </Button>
-        </div>
-        <div className="w-1/2">
-          <Button className="w-full bg-[#DFEFFF] text-[#52B9FF] flex justify-center items-center gap-1 border-[#52B9FF] border-2">
-            <Image src={report} alt="report" />
-            Copy
-          </Button>
-        </div>
+        {!completed && (
+          <>
+            <div className="w-1/2">
+              <Button className="w-full bg-[#52B9FF] flex justify-center items-center gap-2">
+                <HandCoins className="text-[#FFFFFF] text-sm" />
+                Release Funds
+              </Button>
+            </div>
+            <div className="w-1/2">
+              <Button className="w-full bg-[#DFEFFF] text-[#52B9FF] flex justify-center items-center gap-1 border-[#52B9FF] border-2">
+                <Image src={report} alt="report" />
+                Copy
+              </Button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
