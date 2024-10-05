@@ -89,7 +89,7 @@ export default function Home() {
             </div>
             <div>
               <p className="text-sm text-[#5D5D5D]">
-                Total <span className="p-5"></span>
+                Total <span className="p-4"></span>
               </p>
               <p className="text-lg text-black">6</p>
             </div>
