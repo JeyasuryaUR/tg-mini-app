@@ -24,13 +24,15 @@ import {
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useUser } from "@/context/UserContext";
 
 export default function Home() {
-  const [category, setCategory] = useState<string | null>(""); // Value of category filter
-  const [status, setStatus] = useState<string | null>(""); // Value of status filter
-  const [role, setRole] = useState<string | null>(""); // Value of role filter
-  const [date, setDate] = useState<string | null>(""); // Value of date filter
-  const [isDeedPopupOpen, setDeedPopup] = useState(false); // Popup for creating new deed
+  const { userData } = useUser();
+  const [category, setCategory] = useState<string | null>("");
+  const [status, setStatus] = useState<string | null>("");
+  const [role, setRole] = useState<string | null>("");
+  const [date, setDate] = useState<string | null>("");
+  const [isDeedPopupOpen, setDeedPopup] = useState(false);
   return (
     <div className="h-screen w-screen flex flex-col items-start justify-start bg-gray-200 p-6 overflow-x-hidden">
       <div className="flex items-center justify-between w-full mt-4 mb-8">
@@ -49,7 +51,11 @@ export default function Home() {
           <div>
             {/* Username and userid */}
             <p className="text-lg text-gray-400">Hello,</p>
-            <p className="text-lg text-black">Martha Johnson</p>
+            {userData ? (
+              <p className="text-lg text-black">{`${userData.first_name} ${userData.last_name}`}</p>
+            ) : (
+              <p className="text-lg text-black">Michael Johnson</p>
+            )}
           </div>
         </div>
         <Link href="/notifications">

@@ -1,5 +1,6 @@
-// import Image from "next/image";
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useUser } from "@/context/UserContext";
 import {
   ChevronRight,
   CircleHelp,
@@ -11,6 +12,7 @@ import Link from "next/link";
 import React from "react";
 
 const MarketPage = () => {
+  const { userData } = useUser();
   return (
     <div className="p-4 bg-gray-200 text-black">
       <div className="text-2xl font-bold mb-4">Account</div>
@@ -25,8 +27,19 @@ const MarketPage = () => {
           </Avatar>
           <div className="flex flex-col gap-y-2">
             {/* Username and userid */}
-            <div className="text-xl">John Doe</div>
-            <div className="text-sm text-[#52B9FF]">Johndoe123</div>
+            {userData ? (
+              <>
+                <div className="text-sm text-[#52B9FF]">{`${userData.first_name} ${userData.last_name}`}</div>
+                <div className="text-sm text-[#52B9FF]">
+                  {userData.username || userData.id}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="text-xl">John Doe</div>
+                <div className="text-sm text-[#52B9FF]">Johndoe123</div>
+              </>
+            )}
           </div>
         </div>
         <div className="w-full flex flex-col gap-y-4 text-[#5D5D5D]">
