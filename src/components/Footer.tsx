@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
           <div
             className={
               pathname === "/"
-                ? "flex justify-center items-center bg-[#DFEFFF] text-[#52B9FF] p-2 rounded-lg"
-                : "flex justify-center items-center p-2"
+                ? "flex justify-center items-center bg-[#DFEFFF] text-[#52B9FF] p-2 rounded-lg" // This will be the style if that particular page is active
+                : "flex justify-center items-center p-2" // This will be the default style
             }
           >
             <House />

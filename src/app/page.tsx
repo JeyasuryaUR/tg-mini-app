@@ -26,16 +26,18 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
-  const [category, setCategory] = useState<string | null>("");
-  const [status, setStatus] = useState<string | null>("");
-  const [role, setRole] = useState<string | null>("");
-  const [date, setDate] = useState<string | null>("");
-  const [isDeedPopupOpen, setDeedPopup] = useState(false);
+  const [category, setCategory] = useState<string | null>(""); // Value of category filter
+  const [status, setStatus] = useState<string | null>(""); // Value of status filter
+  const [role, setRole] = useState<string | null>(""); // Value of role filter
+  const [date, setDate] = useState<string | null>(""); // Value of date filter
+  const [isDeedPopupOpen, setDeedPopup] = useState(false); // Popup for creating new deed
   return (
     <div className="h-screen w-screen flex flex-col items-start justify-start bg-gray-200 p-6 overflow-x-hidden">
       <div className="flex items-center justify-between w-full mt-4 mb-8">
         <div className="flex items-center justify-center gap-4">
+          {/* User details */}
           <div className="">
+            {/* User img */}
             <Avatar className="w-14 h-14">
               <AvatarImage
                 className="h-24 w-24 object-cover"
@@ -51,6 +53,7 @@ export default function Home() {
           </div>
         </div>
         <Link href="/notifications">
+          {/* Notification bell */}
           <div className="bg-[#FFFFFF] w-14 h-14 p-2 rounded-full flex flex-col justify-center items-center cursor-pointer">
             <div className="w-full flex justify-end">
               <div className="w-2 h-2 bg-[#52B9FF] items-start rounded-full"></div>
@@ -70,7 +73,9 @@ export default function Home() {
             </div>
             <div>
               <p className="text-xs text-[#5D5D5D]">Active Deeds</p>
-              <p className="text-lg text-black">6</p>
+              <p className="text-lg text-black">
+                6 {/* No. of active deeds */}
+              </p>
             </div>
           </div>
           <div className="bg-white border-[2px] w-1/2 border-[#EDEDED] rounded-lg py-3 px-2 flex items-center justify-center gap-4">
@@ -112,6 +117,7 @@ export default function Home() {
         </p>
         <div className="flex items-center justify-center my-4 w-full text-black gap-2">
           <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-xs px-1">
+            {/* Category */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex justify-center items-center">
@@ -159,6 +165,7 @@ export default function Home() {
             </DropdownMenu>
           </div>
           <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-xs px-1">
+            {/* Status */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex justify-center items-center">
@@ -189,6 +196,7 @@ export default function Home() {
             </DropdownMenu>
           </div>
           <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-xs px-1">
+            {/* Role */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex justify-center items-center">
@@ -219,6 +227,7 @@ export default function Home() {
             </DropdownMenu>
           </div>
           <div className="w-1/4 flex items-center justify-center bg-white border-2 border-gray-400 rounded text-xs px-1">
+            {/* Date */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex justify-center items-center">
@@ -259,21 +268,41 @@ export default function Home() {
             </div>
             <p className="text-[#5D5D5D]">Django website</p>
           </div>
-          <div className="pt-5 flex flex-col gap-y-2">
-            {/* Status */}
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full flex justify-center items-center bg-[#52B9FF]">
-                <Zap className="text-[#FFFFFF]" />
+          <div className="flex flex-col gap-y-3">
+            {/* Map below */}
+            <div className="pt-5 flex flex-col gap-y-2">
+              {/* Status */}
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full flex justify-center items-center bg-[#52B9FF]">
+                  <Zap className="text-[#FFFFFF]" />
+                </div>
+                <p>Ongoing</p>
               </div>
-              <p>Ongoing</p>
+              <div className="flex justify-between items-center">
+                <p className="text-[#C4C4C4] text-sm">
+                  Last update: A few minutes ago
+                </p>
+                <Link href="/contract/buyer">
+                  <Button className="bg-[#52B9FF]">Details</Button>
+                </Link>
+              </div>
             </div>
-            <div className="flex justify-between items-center">
-              <p className="text-[#C4C4C4] text-sm">
-                Last update: A few minutes ago
-              </p>
-              <Link href="/contract/buyer">
-                <Button className="bg-[#52B9FF]">Details</Button>
-              </Link>
+            <div className="pt-5 flex flex-col gap-y-2">
+              {/* Status */}
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full flex justify-center items-center bg-[#52B9FF]">
+                  <Zap className="text-[#FFFFFF]" />
+                </div>
+                <p>Ongoing</p>
+              </div>
+              <div className="flex justify-between items-center">
+                <p className="text-[#C4C4C4] text-sm">
+                  Last update: A few minutes ago
+                </p>
+                <Link href="/contract/buyer">
+                  <Button className="bg-[#52B9FF]">Details</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -281,7 +310,7 @@ export default function Home() {
           <div
             className="w-10 h-10 flex justify-center items-center bg-[#52B9FF] rounded-full"
             onClick={() => {
-              setDeedPopup(!isDeedPopupOpen);
+              setDeedPopup(!isDeedPopupOpen); // Opens the create new deed popup(The plus icon)
             }}
           >
             {isDeedPopupOpen ? (
@@ -292,17 +321,20 @@ export default function Home() {
           </div>
           {isDeedPopupOpen && (
             <div className="z-1 border-2 border-[#EDEDED] rounded-br-none relative right-0 bottom-20 rounded-lg bg-[#FFFFFF] py-2">
+              {/* Popup for creating new deed */}
               <p className="font-bold text-[#484848] py-1 border-b-2 border-[#EDEDED] w-full p-4">
                 New Deed
               </p>
 
               <Link href="/createDeed/buyer">
+                {/* Redirects to /createDeed/buyer */}
                 <div className="text-[#484848] flex p-2 items-center gap-2 border-b-2 border-[#EDEDED]">
                   <ShoppingBag className="bg-[#52B9FF] text-[#FFFFFF] p-1 rounded-sm" />
                   <p>{"I'm the buyer"}</p>
                 </div>
               </Link>
               <Link href="/createDeed/seller">
+                {/* Redirects to /createDeed/seller */}
                 <div className="text-[#484848] flex p-2 items-center gap-2">
                   <Handshake className="bg-[#52B9FF] text-[#FFFFFF] p-1 rounded-sm" />
                   <p>{"I'm the seller"}</p>

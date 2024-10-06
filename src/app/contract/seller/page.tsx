@@ -10,7 +10,7 @@ function DeedDetailsSeller() {
   const mileStones = true;
   const completed = true;
   // const completedMilestone = true;
-  const approved = false;
+  const approved = true;
   const [mileStonesObj, setMileStonesObj] = useState([
     {
       id: 0,

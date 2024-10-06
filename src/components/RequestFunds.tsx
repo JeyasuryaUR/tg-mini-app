@@ -6,8 +6,9 @@ import Milestones from "./Milestones";
 import { Upload, XIcon } from "lucide-react";
 
 function RequestFunds() {
-  const [projectLink, setProjectLink] = useState("");
+  const [projectLink, setProjectLink] = useState(""); // This will store the project link
   const [mileStonesObj, setMileStonesObj] = useState([
+    // Sample data for milestones
     {
       id: 0,
       milestone: "Userflow & designing",
@@ -27,9 +28,9 @@ function RequestFunds() {
       expectedTime: "",
     },
   ]);
-  const mileStones = true;
-  const radioRef = useRef<HTMLInputElement>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
+  const mileStones = true; // This will tell if the milestones are there or not
+  const radioRef = useRef<HTMLInputElement>(null); // This will be used to toggle the radio button for one time.
+  const fileRef = useRef<HTMLInputElement>(null); // This is used to simulate the click on the hidden input field
 
   return (
     <div className="h-screen w-screen flex flex-col items-start justify-start bg-[#F8F8F8] p-4 overflow-x-hidden gap-y-8">
@@ -43,7 +44,7 @@ function RequestFunds() {
         <div>
           <h1 className="text-[#484848] font-bold">Request Funds for</h1>
         </div>
-        {!mileStones && (
+        {!mileStones && ( // This will only be rendered if there are milestones. If not, then the below radio button will be rendered
           <div className="w-full flex flex-col gap-y-2">
             <div
               className="w-full flex justify-between text-[#5D5D5D]"
@@ -71,6 +72,7 @@ function RequestFunds() {
         )}
         {mileStones &&
           mileStonesObj.map((val) => {
+            // This will render the milestones radio button
             return (
               <>
                 <Milestones milestone={val?.milestone} amount={val?.amount} />
@@ -109,12 +111,13 @@ function RequestFunds() {
           <div
             className="min-h-[120px] flex flex-col gap-y-2 justify-center items-center text-[#C4C4C4] border-[#C4C4C4] border-2 rounded-md w-full"
             onClick={() => {
-              fileRef?.current?.click();
+              fileRef?.current?.click(); // This will simulate the click on the hidden input field
             }}
           >
             <Upload />
             <p>Select a file to upload</p>
             <input type="file" ref={fileRef} className="hidden" />
+            {/* This will be hidden. This ref click is simulated in the above div. */}
           </div>
         </div>
       </div>
@@ -168,46 +171,3 @@ function RequestFunds() {
 }
 
 export default RequestFunds;
-
-{
-  /* <div className="flex flex-col gap-y-2 w-full">
-        <div>
-          <h1>Proof of work (Optional)</h1>
-        </div>
-        <div>
-          <p>
-            It’s recommended to upload work proofs for your contract. It will be
-            very helpful in case of any fraud.
-          </p>
-        </div>
-        <div className="flex flex-col justify-center items-center w-full gap-y-2">
-          <div className="flex p-2 justify-center items-center w-full bg-[#FFFFFF] border-[#C4C4C4] border-2 rounded-md">
-            <input
-              type="text"
-              className="rounded-md outline-none w-full"
-              placeholder="Project Link"
-              onChange={(e) => setProjectLink(e.target.value)}
-              value={projectLink}
-            />
-            <div
-              onClick={() => {
-                setProjectLink("");
-              }}
-            >
-              <XIcon className="w-5 h-5 text-[#5D5D5D]" />
-            </div>
-          </div>
-          <p className="text-[#C4C4C4]">Or</p>
-          <div
-            className="min-h-[120px] flex flex-col gap-y-2 justify-center items-center text-[#C4C4C4] border-[#C4C4C4] border-2 rounded-md w-full"
-            onClick={() => {
-              fileRef?.current?.click();
-            }}
-          >
-            <Upload />
-            <p>Select a file to upload</p>
-            <input type="file" ref={fileRef} className="hidden" />
-          </div>
-        </div>
-      </div> */
-}

@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Milestones from "./Milestones";
 
 function ReleaseFunds() {
+  // Sample data for milestones
   const [mileStonesObj, setMileStonesObj] = useState([
     {
       id: 0,
@@ -69,6 +70,7 @@ function ReleaseFunds() {
         {mileStones &&
           mileStonesObj.map((val) => {
             return (
+              // Mapping the milestones for it's radio button.
               <>
                 <Milestones milestone={val?.milestone} amount={val?.amount} />
               </>
