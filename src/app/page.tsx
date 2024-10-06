@@ -45,6 +45,7 @@ export default function Home() {
             </Avatar>
           </div>
           <div>
+            {/* Username and userid */}
             <p className="text-lg text-gray-400">Hello,</p>
             <p className="text-lg text-black">Martha Johnson</p>
           </div>

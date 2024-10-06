@@ -24,6 +24,7 @@ const MarketPage = () => {
             <AvatarFallback>MJ</AvatarFallback>
           </Avatar>
           <div className="flex flex-col gap-y-2">
+            {/* Username and userid */}
             <div className="text-xl">John Doe</div>
             <div className="text-sm text-[#52B9FF]">Johndoe123</div>
           </div>
