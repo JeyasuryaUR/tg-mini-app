@@ -17,6 +17,7 @@ function Faq() {
       <div>
         {/* FAQ's */}
         <Accordion type="single" collapsible className="flex flex-col gap-y-2">
+          {/* Map the accordion item */}
           <AccordionItem
             value="item-1"
             className="bg-[#FFFFFF] px-2 rounded-md hover:cursor-pointer"

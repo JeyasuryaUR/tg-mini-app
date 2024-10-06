@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Milestones from "./Milestones";
 
 function ReleaseFunds() {
+  // Sample data for milestones
   const [mileStonesObj, setMileStonesObj] = useState([
     {
       id: 0,
@@ -69,6 +70,7 @@ function ReleaseFunds() {
         {mileStones &&
           mileStonesObj.map((val) => {
             return (
+              // Mapping the milestones for it's radio button.
               <>
                 <Milestones milestone={val?.milestone} amount={val?.amount} />
               </>
@@ -84,6 +86,14 @@ function ReleaseFunds() {
           <div className="w-full flex justify-between text-[#5D5D5D]">
             <p>Deed Buyer</p>
             <p className="text-[#52B9FF]">You(34 Plebi)</p>
+          </div>
+        </div>
+        <div className="p-[0.5px] bg-[#EDEDED]"></div>
+
+        <div className="w-full flex flex-col gap-y-2">
+          <div className="w-full flex justify-between text-[#5D5D5D]">
+            <p>Deed Seller</p>
+            <p className="text-[#52B9FF]">Ba3kkk</p>
           </div>
         </div>
         <div className="p-[0.5px] bg-[#EDEDED]"></div>
@@ -113,7 +123,6 @@ function ReleaseFunds() {
         <div className="p-[0.5px] bg-[#EDEDED]"></div>
       </div>
       <div className="w-full flex gap-2 min-h-[120px]">
-        {/* Share */}
         <div className="w-full">
           <Button className="w-full bg-[#52B9FF] flex justify-center items-center gap-2">
             Release Funds

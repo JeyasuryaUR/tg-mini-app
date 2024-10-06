@@ -2,6 +2,7 @@
 import { useRef } from "react";
 
 function SellerApplication(props: { seller: string; time: string }) {
+  // This component was used to render the radio buttons in the seller applications radio button. Takes 2 props: seller name and time.
   const radioRef = useRef<HTMLInputElement>(null);
   return (
     <div className="w-full flex flex-col gap-y-2">
