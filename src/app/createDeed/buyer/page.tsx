@@ -293,11 +293,11 @@ function CreateFee() {
                     {/* Map here */}
                     <DropdownMenuItem
                       onClick={(e) => {
-                        setExpectedTimeOfCompletion((prev) => {
-                          const newExpectedTimeOfCompletion = [...prev];
-                          newExpectedTimeOfCompletion[0] =
-                            e?.currentTarget?.textContent || "";
-                          return newExpectedTimeOfCompletion;
+                        setMileStones((prev) => {
+                          const newMilestones = [...prev];
+                          newMilestones[0].expectedTime =
+                            e.currentTarget.textContent || "";
+                          return newMilestones;
                         });
                       }}
                     >
@@ -305,11 +305,11 @@ function CreateFee() {
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={(e) => {
-                        setExpectedTimeOfCompletion((prev) => {
-                          const newExpectedTimeOfCompletion = [...prev];
-                          newExpectedTimeOfCompletion[0] =
-                            e?.currentTarget?.textContent || "";
-                          return newExpectedTimeOfCompletion;
+                        setMileStones((prev) => {
+                          const newMilestones = [...prev];
+                          newMilestones[0].expectedTime =
+                            e.currentTarget.textContent || "";
+                          return newMilestones;
                         });
                       }}
                     >
@@ -317,11 +317,11 @@ function CreateFee() {
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={(e) => {
-                        setExpectedTimeOfCompletion((prev) => {
-                          const newExpectedTimeOfCompletion = [...prev];
-                          newExpectedTimeOfCompletion[0] =
-                            e?.currentTarget?.textContent || "";
-                          return newExpectedTimeOfCompletion;
+                        setMileStones((prev) => {
+                          const newMilestones = [...prev];
+                          newMilestones[0].expectedTime =
+                            e.currentTarget.textContent || "";
+                          return newMilestones;
                         });
                       }}
                     >
@@ -329,11 +329,11 @@ function CreateFee() {
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={(e) => {
-                        setExpectedTimeOfCompletion((prev) => {
-                          const newExpectedTimeOfCompletion = [...prev];
-                          newExpectedTimeOfCompletion[0] =
-                            e?.currentTarget?.textContent || "";
-                          return newExpectedTimeOfCompletion;
+                        setMileStones((prev) => {
+                          const newMilestones = [...prev];
+                          newMilestones[0].expectedTime =
+                            e.currentTarget.textContent || "";
+                          return newMilestones;
                         });
                       }}
                     >

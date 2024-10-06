@@ -8,9 +8,9 @@ import RequestFunds from "@/components/RequestFunds";
 import SellerApplication from "@/components/SellerApplication";
 
 function DeedDetailsBuyer() {
-  const mileStones = true;
-  const completed = false;
-  // const completedMilestone = true;
+  const mileStones = false;
+  const completed = true;
+  const completedMilestone = true;
   const approved = false;
   const [mileStonesObj, setMileStonesObj] = useState([
     {
@@ -35,7 +35,7 @@ function DeedDetailsBuyer() {
       isCompleted: false,
     },
   ]);
-  const paymentPending = false;
+  const paymentPending = true;
   return !approved ? (
     <div className="h-screen w-screen flex flex-col items-start justify-start bg-[#F8F8F8] p-4 overflow-x-hidden gap-y-5">
       <div className="flex flex-col justify-center gap-y-2">
