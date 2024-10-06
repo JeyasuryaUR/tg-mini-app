@@ -10,7 +10,6 @@ import SellerApplication from "@/components/SellerApplication";
 function DeedDetailsBuyer() {
   const mileStones = false;
   const completed = true;
-  const completedMilestone = true;
   const approved = false;
   const [mileStonesObj, setMileStonesObj] = useState([
     {
