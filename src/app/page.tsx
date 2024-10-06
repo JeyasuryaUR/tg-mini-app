@@ -24,8 +24,10 @@ import {
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useUser } from "@/context/UserContext";
 
 export default function Home() {
+  const { userData } = useUser();
   const [category, setCategory] = useState<string | null>("");
   const [status, setStatus] = useState<string | null>("");
   const [role, setRole] = useState<string | null>("");
@@ -47,7 +49,11 @@ export default function Home() {
           <div>
             {/* Username and userid */}
             <p className="text-lg text-gray-400">Hello,</p>
-            <p className="text-lg text-black">Martha Johnson</p>
+            {userData ? (
+              <p className="text-lg text-black">{`${userData.first_name} ${userData.last_name}`}</p>
+            ) : (
+              <p className="text-lg text-black">Michael Johnson</p>
+            )}
           </div>
         </div>
         <Link href="/notifications">
