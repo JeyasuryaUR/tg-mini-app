@@ -16,13 +16,14 @@ function CreateDeedSeller() {
   const [expectedTimeOfCompletion, setExpectedTimeOfCompletion] = useState<
     string[]
   >([]);
-  const [isDeedSaved, setIsDeedSaved] = useState(false);
   const [description, setDescription] = useState("");
   const [mileStones, setMileStones] = useState([
-    { id: 0, milestone: "", amount: "0", expectedTime: "" },
+    // Focus on this object to fetch changes.
+    { id: 0, milestone: "", amount: "0", expectedTime: "" }, // Initial state of milestones
   ]);
 
   function addMilestone() {
+    // This function will add a new milestone (Function for add new milestone button)
     setMileStones((prev) => [
       ...prev,
       { id: prev.length, milestone: "", amount: "0", expectedTime: "" },
@@ -99,10 +100,12 @@ function CreateDeedSeller() {
               <DropdownMenuTrigger className="w-full flex items-center justify-center">
                 {modeOfPayment ? (
                   <div className="w-[80%] flex justify-start items-center text-black text-sm">
+                    {/* If mode of payment is selected this will diplay it */}
                     <p>{modeOfPayment}</p>
                   </div>
                 ) : (
                   <div className="w-[80%] flex justify-start items-center text-[#C4C4C4] text-sm">
+                    {/* If not mode of payment is selected this will diplay it */}
                     <p>Mode Of Payment</p>
                   </div>
                 )}
@@ -113,6 +116,7 @@ function CreateDeedSeller() {
               <DropdownMenuContent className="w-full">
                 <DropdownMenuItem
                   onClick={(e) => {
+                    // This will set the mode of payment.
                     setModeOfPayment(e?.currentTarget?.textContent);
                   }}
                 >
@@ -143,7 +147,7 @@ function CreateDeedSeller() {
             </DropdownMenu>
           </div>
           {!isOneTime &&
-            mileStones.map((val) => (
+            mileStones.map((val, ind) => (
               <div className="flex flex-col gap-y-2 w-full" key={val?.id}>
                 <div className="flex p-2 w-full items-center bg-[#FFFFFF] border-[#C4C4C4] border-2 rounded-md">
                   <input
@@ -151,9 +155,10 @@ function CreateDeedSeller() {
                     className="rounded-md w-full outline-none text-sm text-[#C4C4C4]"
                     placeholder="Milestone"
                     onChange={(e) => {
+                      // This code will set the milestones object based on it's index.
                       setMileStones((prev) => {
                         const newMilestones = [...prev];
-                        newMilestones[val.id].milestone = e.target.value;
+                        newMilestones[ind].milestone = e.target.value;
                         return newMilestones;
                       });
                     }}
@@ -167,7 +172,7 @@ function CreateDeedSeller() {
                     onChange={(e) => {
                       setMileStones((prev) => {
                         const newMilestones = [...prev];
-                        newMilestones[val.id].amount = e.target.value;
+                        newMilestones[ind].amount = e.target.value;
                         return newMilestones;
                       });
                     }}
@@ -177,9 +182,9 @@ function CreateDeedSeller() {
                 <div className="w-full bg-[#FFFFFF] rounded-md p-2 px-1 border-[#C4C4C4] border-2">
                   <DropdownMenu>
                     <DropdownMenuTrigger className="w-full flex items-center justify-center">
-                      {mileStones[val.id].expectedTime !== "" ? (
+                      {mileStones[ind].expectedTime !== "" ? (
                         <div className="w-[80%] flex justify-start items-center text-black text-sm">
-                          <p>{mileStones[val.id].expectedTime}</p>
+                          <p>{mileStones[ind].expectedTime}</p>
                         </div>
                       ) : (
                         <div className="w-[80%] flex justify-start items-center text-[#C4C4C4] text-sm">
@@ -191,12 +196,12 @@ function CreateDeedSeller() {
                       </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-full">
-                      {/* Map here */}
+                      {/* Map here. Map the DropdownMenuItem if you want to render the options */}
                       <DropdownMenuItem
                         onClick={(e) => {
                           setMileStones((prev) => {
                             const newMilestones = [...prev];
-                            newMilestones[val.id].expectedTime =
+                            newMilestones[ind].expectedTime =
                               e.currentTarget.textContent || "";
                             return newMilestones;
                           });
@@ -208,7 +213,7 @@ function CreateDeedSeller() {
                         onClick={(e) => {
                           setMileStones((prev) => {
                             const newMilestones = [...prev];
-                            newMilestones[val.id].expectedTime =
+                            newMilestones[ind].expectedTime =
                               e.currentTarget.textContent || "";
                             return newMilestones;
                           });
@@ -220,7 +225,7 @@ function CreateDeedSeller() {
                         onClick={(e) => {
                           setMileStones((prev) => {
                             const newMilestones = [...prev];
-                            newMilestones[val.id].expectedTime =
+                            newMilestones[ind].expectedTime =
                               e.currentTarget.textContent || "";
                             return newMilestones;
                           });
@@ -232,7 +237,7 @@ function CreateDeedSeller() {
                         onClick={(e) => {
                           setMileStones((prev) => {
                             const newMilestones = [...prev];
-                            newMilestones[val.id].expectedTime =
+                            newMilestones[ind].expectedTime =
                               e.currentTarget.textContent || "";
                             return newMilestones;
                           });
@@ -246,6 +251,7 @@ function CreateDeedSeller() {
               </div>
             ))}
           {isOneTime && (
+            // This will be rendered if the user chooses one time.
             <>
               <div className="flex justify-between p-2 w-full items-center bg-[#FFFFFF] border-[#C4C4C4] border-2 rounded-md">
                 <input
@@ -292,6 +298,7 @@ function CreateDeedSeller() {
                     {/* Map here */}
                     <DropdownMenuItem
                       onClick={(e) => {
+                        // Sets the expected time of completion.
                         setExpectedTimeOfCompletion((prev) => {
                           const newExpectedTimeOfCompletion = [...prev];
                           newExpectedTimeOfCompletion[0] =
@@ -358,12 +365,7 @@ function CreateDeedSeller() {
       </div>
       <div className="w-full min-h-[120px]">
         {/* Save deed */}
-        <Button
-          className="bg-[#52B9FF] text-[#FFFFFF] w-full"
-          onClick={() => {
-            setIsDeedSaved(true);
-          }}
-        >
+        <Button className="bg-[#52B9FF] text-[#FFFFFF] w-full">
           Save Deed
         </Button>
       </div>

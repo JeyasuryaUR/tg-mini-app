@@ -11,18 +11,16 @@ import { useState } from "react";
 
 function CreateFee() {
   const [deed, setDeed] = useState("");
-  const [isOneTime, setIsOneTime] = useState(true);
+  const [isOneTime, setIsOneTime] = useState(true); // This will check if the deed is one time or has milestones
   const [modeOfPayment, setModeOfPayment] = useState<string | null>("");
-  const [expectedTimeOfCompletion, setExpectedTimeOfCompletion] = useState<
-    string[]
-  >([]);
-  const [isDeedSaved, setIsDeedSaved] = useState(false);
   const [description, setDescription] = useState("");
   const [mileStones, setMileStones] = useState([
-    { id: 0, milestone: "", amount: "0", expectedTime: "" },
+    // Focus on this object to fetch the changes.
+    { id: 0, milestone: "", amount: "0", expectedTime: "" }, // This is the initial state of milestone
   ]);
 
   function addMilestone() {
+    // This function will add a new milestone (Function for add new milestone button)
     setMileStones((prev) => [
       ...prev,
       { id: prev.length, milestone: "", amount: "0", expectedTime: "" },
@@ -100,10 +98,12 @@ function CreateFee() {
               <DropdownMenuTrigger className="w-full flex items-center justify-center">
                 {modeOfPayment ? (
                   <div className="w-[80%] flex justify-start items-center text-black text-sm">
+                    {/* If mode of payment is selected this will diplay it */}
                     <p>{modeOfPayment}</p>
                   </div>
                 ) : (
                   <div className="w-[80%] flex justify-start items-center text-[#C4C4C4] text-sm">
+                    {/* If not selected it'll just display mode of payment */}
                     <p>Mode Of Payment</p>
                   </div>
                 )}
@@ -112,9 +112,10 @@ function CreateFee() {
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-full">
+                {/* Map here for dropdown menu options if you want to. */}
                 <DropdownMenuItem
                   onClick={(e) => {
-                    setModeOfPayment(e?.currentTarget?.textContent);
+                    setModeOfPayment(e?.currentTarget?.textContent); // This sets the mode of payment variable
                   }}
                 >
                   UPI
@@ -143,8 +144,8 @@ function CreateFee() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          {!isOneTime &&
-            mileStones.map((val) => (
+          {!isOneTime && // This will render the milestones. It uses the milestone index to map through the milestones and updates it. You can also use milestone id if you want.
+            mileStones.map((val, ind) => (
               <div className="flex flex-col gap-y-2 w-full" key={val?.id}>
                 <div className="flex p-2 w-full items-center bg-[#FFFFFF] border-[#C4C4C4] border-2 rounded-md">
                   <input
@@ -154,7 +155,7 @@ function CreateFee() {
                     onChange={(e) => {
                       setMileStones((prev) => {
                         const newMilestones = [...prev];
-                        newMilestones[val.id].milestone = e.target.value;
+                        newMilestones[ind].milestone = e.target.value;
                         return newMilestones;
                       });
                     }}
@@ -168,7 +169,7 @@ function CreateFee() {
                     onChange={(e) => {
                       setMileStones((prev) => {
                         const newMilestones = [...prev];
-                        newMilestones[val.id].amount = e.target.value;
+                        newMilestones[ind].amount = e.target.value; // Change the ind here to ind. To change it to index
                         return newMilestones;
                       });
                     }}
@@ -178,9 +179,9 @@ function CreateFee() {
                 <div className="w-full bg-[#FFFFFF] rounded-md p-2 px-1 border-[#C4C4C4] border-2">
                   <DropdownMenu>
                     <DropdownMenuTrigger className="w-full flex items-center justify-center">
-                      {mileStones[val.id].expectedTime !== "" ? (
+                      {mileStones[ind].expectedTime !== "" ? (
                         <div className="w-[80%] flex justify-start items-center text-black text-sm">
-                          <p>{mileStones[val.id].expectedTime}</p>
+                          <p>{mileStones[ind].expectedTime}</p>
                         </div>
                       ) : (
                         <div className="w-[80%] flex justify-start items-center text-[#C4C4C4] text-sm">
@@ -192,12 +193,13 @@ function CreateFee() {
                       </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-full">
-                      {/* Map here */}
+                      {/* Map here. Map the DropdownMenuItem */}
                       <DropdownMenuItem
                         onClick={(e) => {
+                          // This will update the expected time of completion dropdown.
                           setMileStones((prev) => {
                             const newMilestones = [...prev];
-                            newMilestones[val.id].expectedTime =
+                            newMilestones[ind].expectedTime =
                               e.currentTarget.textContent || "";
                             return newMilestones;
                           });
@@ -209,7 +211,7 @@ function CreateFee() {
                         onClick={(e) => {
                           setMileStones((prev) => {
                             const newMilestones = [...prev];
-                            newMilestones[val.id].expectedTime =
+                            newMilestones[ind].expectedTime =
                               e.currentTarget.textContent || "";
                             return newMilestones;
                           });
@@ -221,7 +223,7 @@ function CreateFee() {
                         onClick={(e) => {
                           setMileStones((prev) => {
                             const newMilestones = [...prev];
-                            newMilestones[val.id].expectedTime =
+                            newMilestones[ind].expectedTime =
                               e.currentTarget.textContent || "";
                             return newMilestones;
                           });
@@ -233,7 +235,7 @@ function CreateFee() {
                         onClick={(e) => {
                           setMileStones((prev) => {
                             const newMilestones = [...prev];
-                            newMilestones[val.id].expectedTime =
+                            newMilestones[ind].expectedTime =
                               e.currentTarget.textContent || "";
                             return newMilestones;
                           });
@@ -246,7 +248,7 @@ function CreateFee() {
                 </div>
               </div>
             ))}
-          {isOneTime && (
+          {isOneTime && ( // Will only update the first milestone if it's one time
             <>
               <div className="flex justify-between p-2 w-full items-center bg-[#FFFFFF] border-[#C4C4C4] border-2 rounded-md">
                 <input
@@ -359,12 +361,7 @@ function CreateFee() {
       </div>
       <div className="w-full min-h-[120px]">
         {/* Save deed */}
-        <Button
-          className="bg-[#52B9FF] text-[#FFFFFF] w-full"
-          onClick={() => {
-            setIsDeedSaved(true);
-          }}
-        >
+        <Button className="bg-[#52B9FF] text-[#FFFFFF] w-full">
           Save Deed
         </Button>
       </div>

@@ -8,10 +8,11 @@ import RequestFunds from "@/components/RequestFunds";
 import SellerApplication from "@/components/SellerApplication";
 
 function DeedDetailsBuyer() {
-  const mileStones = false;
-  const completed = true;
-  const approved = false;
+  const mileStones = false; // This will toggle the milestones
+  const completed = false; // This will change the text in the project status from ongoin to completed.
+  const approved = false; // If set to true this will render the RequestFunds component.
   const [mileStonesObj, setMileStonesObj] = useState([
+    // Example data for milestones
     {
       id: 0,
       milestone: "Userflow & designing",
@@ -34,7 +35,7 @@ function DeedDetailsBuyer() {
       isCompleted: false,
     },
   ]);
-  const paymentPending = true;
+  const paymentPending = false; // If set to true this will render the share and copy button. If set to false, it will render the request funds and copy button.
   return !approved ? (
     <div className="h-screen w-screen flex flex-col items-start justify-start bg-[#F8F8F8] p-4 overflow-x-hidden gap-y-5">
       <div className="flex flex-col justify-center gap-y-2">
@@ -191,7 +192,7 @@ function DeedDetailsBuyer() {
               <div className="w-1/2">
                 <Button className="w-full bg-[#DFEFFF] text-[#52B9FF] flex justify-center items-center gap-1 border-[#52B9FF] border-2">
                   <Image src={report} alt="report" />
-                  Copy
+                  Report Spam
                 </Button>
               </div>
             </>
@@ -200,7 +201,10 @@ function DeedDetailsBuyer() {
       </div>
     </div>
   ) : (
-    <RequestFunds />
+    <>
+      {/* Will only be rendered if the project is approved */}
+      <RequestFunds />
+    </>
   );
 }
 

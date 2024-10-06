@@ -92,6 +92,14 @@ function ReleaseFunds() {
 
         <div className="w-full flex flex-col gap-y-2">
           <div className="w-full flex justify-between text-[#5D5D5D]">
+            <p>Deed Seller</p>
+            <p className="text-[#52B9FF]">Ba3kkk</p>
+          </div>
+        </div>
+        <div className="p-[0.5px] bg-[#EDEDED]"></div>
+
+        <div className="w-full flex flex-col gap-y-2">
+          <div className="w-full flex justify-between text-[#5D5D5D]">
             <p>Payment Distribution Type</p>
             <p className="text-[#52B9FF]">One Time</p>
           </div>
@@ -115,7 +123,6 @@ function ReleaseFunds() {
         <div className="p-[0.5px] bg-[#EDEDED]"></div>
       </div>
       <div className="w-full flex gap-2 min-h-[120px]">
-        {/* Share */}
         <div className="w-full">
           <Button className="w-full bg-[#52B9FF] flex justify-center items-center gap-2">
             Release Funds

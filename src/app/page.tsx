@@ -264,54 +264,68 @@ export default function Home() {
             </DropdownMenu>
           </div>
         </div>
-        <div className="w-full mx-6 border-2 border-gray-200 bg-white rounded-lg min-h-[120px] px-4 py-4">
-          <div className="flex flex-col">
-            {/* Details */}
-            <p className="text-[#5D5D5D] text-xs">ID: 3kh4kh21</p>
-            <div className="flex gap-1 text-[#262626]">
-              <p className="font-bold text-2xl">$</p>
-              <p className="font-bold text-2xl">3400</p>
-            </div>
-            <p className="text-[#5D5D5D]">Django website</p>
-          </div>
-          <div className="flex flex-col gap-y-3">
+        {
+          <div className="flex flex-col gap-y-3 justify-center items-center w-full">
             {/* Map below */}
-            <div className="pt-5 flex flex-col gap-y-2">
-              {/* Status */}
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex justify-center items-center bg-[#52B9FF]">
-                  <Zap className="text-[#FFFFFF]" />
+            <div className="w-full mx-6 border-2 border-gray-200 bg-white rounded-lg min-h-[120px] px-4 py-4">
+              <div className="flex flex-col">
+                {/* Details */}
+                <p className="text-[#5D5D5D] text-xs">ID: 3kh4kh21</p>
+                <div className="flex gap-1 text-[#262626]">
+                  <p className="font-bold text-2xl">$</p>
+                  <p className="font-bold text-2xl">3400</p>
                 </div>
-                <p>Ongoing</p>
+                <p className="text-[#5D5D5D]">Django website</p>
               </div>
-              <div className="flex justify-between items-center">
-                <p className="text-[#C4C4C4] text-sm">
-                  Last update: A few minutes ago
-                </p>
-                <Link href="/contract/buyer">
-                  <Button className="bg-[#52B9FF]">Details</Button>
-                </Link>
+              <div className="pt-5 flex flex-col">
+                {/* Status */}
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full flex justify-center items-center bg-[#52B9FF]">
+                    <Zap className="text-[#FFFFFF]" />
+                  </div>
+                  <p>Ongoing</p>
+                </div>
+                <div className="flex justify-between items-center">
+                  <p className="text-[#C4C4C4] text-sm">
+                    Last update: A few minutes ago
+                  </p>
+                  <Link href="/contract/buyer">
+                    <Button className="bg-[#52B9FF]">Details</Button>
+                  </Link>
+                </div>
               </div>
             </div>
-            <div className="pt-5 flex flex-col gap-y-2">
-              {/* Status */}
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex justify-center items-center bg-[#52B9FF]">
-                  <Zap className="text-[#FFFFFF]" />
+
+            <div className="w-full mx-6 border-2 border-gray-200 bg-white rounded-lg min-h-[120px] px-4 py-4">
+              <div className="flex flex-col">
+                {/* Details */}
+                <p className="text-[#5D5D5D] text-xs">ID: 3kh4kh21</p>
+                <div className="flex gap-1 text-[#262626]">
+                  <p className="font-bold text-2xl">$</p>
+                  <p className="font-bold text-2xl">3400</p>
                 </div>
-                <p>Ongoing</p>
+                <p className="text-[#5D5D5D]">Django website</p>
               </div>
-              <div className="flex justify-between items-center">
-                <p className="text-[#C4C4C4] text-sm">
-                  Last update: A few minutes ago
-                </p>
-                <Link href="/contract/buyer">
-                  <Button className="bg-[#52B9FF]">Details</Button>
-                </Link>
+              <div className="pt-5 flex flex-col">
+                {/* Status */}
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full flex justify-center items-center bg-[#52B9FF]">
+                    <Zap className="text-[#FFFFFF]" />
+                  </div>
+                  <p>Ongoing</p>
+                </div>
+                <div className="flex justify-between items-center">
+                  <p className="text-[#C4C4C4] text-sm">
+                    Last update: A few minutes ago
+                  </p>
+                  <Link href="/contract/buyer">
+                    <Button className="bg-[#52B9FF]">Details</Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        }
         <div className="w-full z-10 flex flex-row-reverse justify-start items-center min-h-20">
           <div
             className="w-10 h-10 flex justify-center items-center bg-[#52B9FF] rounded-full"

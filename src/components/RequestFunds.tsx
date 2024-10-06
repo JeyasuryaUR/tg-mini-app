@@ -159,7 +159,6 @@ function RequestFunds() {
         <div className="p-[0.5px] bg-[#EDEDED]"></div>
       </div>
       <div className="w-full flex gap-2 min-h-[120px]">
-        {/* Share */}
         <div className="w-full">
           <Button className="w-full bg-[#52B9FF] flex justify-center items-center gap-2">
             Request Funds

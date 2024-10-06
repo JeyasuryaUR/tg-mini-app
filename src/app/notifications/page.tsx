@@ -9,9 +9,10 @@ function Notifications() {
       <div className="flex flex-col justify-center gap-y-2">
         <div className="flex flex-col gap-y-4">
           <div className="w-fit p-2 text-[#5D5D5D] bg-[#DFDFDF] rounded-md">
-            <p>Today</p>
+            <p>Today {/* Day of notification */}</p>
           </div>
           <div className="w-full flex justify-center items-center gap-3 bg-[#FFFFFF] p-2 rounded-md">
+            {/* Notifications */}
             <UserRound className="bg-[#52B9FF] text-[#FFFFFF] p-2 rounded-lg w-10 h-10" />
             <p>User23jk has sent you a request for a deed.</p>
           </div>
